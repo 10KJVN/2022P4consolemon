@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleMon
 {
@@ -7,6 +8,8 @@ namespace ConsoleMon
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.ReadLine();
+
         }
     }
 }
