@@ -19,6 +19,18 @@ namespace ConsoleMon
             target.TakeDamage(5);
         }
 
+        internal Skill()
+        {
+           
+        }
+
+        internal Skill(Skill copyFrom)
+        {
+            this.damage = copyFrom.damage;
+            this.energyCost = copyFrom.energyCost;
+            this.name = copyFrom.name; 
+        }
+
     }
 
 }
