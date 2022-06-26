@@ -8,10 +8,10 @@ namespace ConsoleMon
 {
     internal class Skill
     {
-        float damage = 0;
-        float energyCost = 0;
-        string name = "Ember";
-        Element Element = Element.Fire; //Element. om te kiezen van de Enums
+        float Damage = 16;
+        float EnergyCost = 4;
+        string Name = "Ember";
+        Element element = Element.Fire; //Element. om te kiezen van de Enums
 
         public void UseOn(ConsoleMon target, ConsoleMon caster)
         {
@@ -26,9 +26,9 @@ namespace ConsoleMon
 
         internal Skill(Skill copyFrom)
         {
-            this.damage = copyFrom.damage;
-            this.energyCost = copyFrom.energyCost;
-            this.name = copyFrom.name; 
+            this.Damage = copyFrom.Damage;
+            this.EnergyCost = copyFrom.EnergyCost;
+            this.Name = copyFrom.Name; 
         }
 
     }

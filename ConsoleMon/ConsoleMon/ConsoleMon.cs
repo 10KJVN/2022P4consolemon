@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleMon
 {
+    //Enums
     enum Element
     {
         Fire = 1,
@@ -14,26 +15,29 @@ namespace ConsoleMon
         Air = 4,
     }
 
-    internal class ConsoleMon
+    public class ConsoleMon
     {
-        int Health = 5;
-        int Energy = 0;
-        string name = "Chimchar";
-        int damage;
+        //Waardes
+        public int Health = 100;
+        public int Energy = 100;
+        string Name = "Chimchar";
+        public int Damage;
         Element weakness = Element.Water; //Geen string maar element
 
-        List<Skill> skills = new List<Skill>();
+        internal List<Skill> skills = new List<Skill>();
 
+        //Functies
         public void TakeDamage(int Damage)
         {
             Health = -Damage;
         }
 
-        public void DepleteEnergy(int energy)
+        public void DepleteEnergy(int Energy)
         {
-            Energy = -energy;
+            Energy = -Energy;
         }
 
+        //Constructors
         internal ConsoleMon()
         {
 
@@ -41,22 +45,23 @@ namespace ConsoleMon
 
         internal ConsoleMon(ConsoleMon copyFrom)
         {
-            this.name = copyFrom.name;
+            this.Name = copyFrom.Name;
             this.Health = copyFrom.Health;
             this.Energy = copyFrom.Energy;
 
-            damage = copyFrom.damage;
+            Damage = copyFrom.Damage;
             //[attack, fireball, screech]
 
             for (int i = 0; i < copyFrom.skills.Count; i++)
             {
                 Skill copyFromThisSkill = copyFrom.skills[i];
-                Skill copy = new Skill(copyFromThisSkill);
+                Skill clone = new Skill(copyFromThisSkill);
 
-                this.skills.Add(copy);
+                this.skills.Add(clone);
             }
          
         }
 
     }
 }
+
